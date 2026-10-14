@@ -1,0 +1,6 @@
+artifacts/
+tmp/
+node_modules/
+__pycache__/
+.DS_Store
+docs/references/notebooklm-public-sources-2026-10-14.zip
