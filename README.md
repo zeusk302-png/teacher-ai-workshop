@@ -1,10 +1,14 @@
 # 부산보건고등학교 교사 AI 업무 심화 연수
 
-무료 계정 중심의 120분 연수용 정적 웹사이트입니다. AI 업무 선택, NotebookLM 공개 자료 검색과 인용 확인, 공식·사용자 제작 스킬, 근거를 담은 문서 작업 요청, Word/PPT/Excel 실습을 제공합니다.
+무료 계정 중심의 120분 연수용 정적 웹사이트입니다. AI 업무 선택, NotebookLM 공개 자료 검색과 인용 확인, 공식·사용자 제작 스킬, 검색한 데이터를 활용한 문서 작업 요청, Word/PPT/Excel 실습을 제공합니다.
 
 ## 배포
 
 GitHub Pages: `main` 브랜치 `/docs` 폴더. 외부 AI API나 키를 사용하지 않습니다. 사이트 입력은 브라우저에서만 처리되며 제출 서버가 없습니다. 학습 체크 상태만 localStorage에 저장됩니다.
+
+## 개념과 실습
+
+왼쪽 ‘RAG와 NotebookLM’ 목차에서 RAG의 필요성·검색/생성 흐름·NotebookLM과의 관계·원문 검토를 네 화면으로 배웁니다. NIST와 Google 공식 출처를 각 설명에 연결했습니다. 첫 10분은 RAG와 NotebookLM의 개념을 확인하며, 이후 자료 준비와 17단계 실습으로 이어갑니다.
 
 ## 자료
 
@@ -12,16 +16,24 @@ GitHub Pages: `main` 브랜치 `/docs` 폴더. 외부 AI API나 키를 사용하
 
 `docs/assets/notebook/`: 로그인된 실제 서비스에서 공개 자료로 진행한 NotebookLM 실습 캡처. 사이트에 표시한 기준일의 화면이며, 실제 도구 UI와 기능은 변경될 수 있습니다.
 
-`docs/downloads/`: 공개 자료 묶음, 가상 예산 CSV 등.
+`docs/downloads/`: 공개 자료 묶음, 시작 자료 PDF 3종 묶음, 가상 예산 CSV, 강의 교재 PDF와 Word 수업계획안.
+
+- `teacher-ai-lecture.pdf`: 16:9 가로형 41쪽. 2쪽은 제공 이력서에서 발췌한 강사 사진·재직·학력·강의 기록. 표지와 마지막 쪽에 공개 사이트 QR 코드가 있습니다.
+- `teacher-ai-lesson-plan.docx`: 120분 수업계획안 2쪽. 실제 연수 일시와 장소는 확정 정보를 받기 전까지 학교 협의 후 확정으로 표시합니다.
+- 원본 이력서와 추출한 연락처는 배포 폴더에 포함하지 않습니다. 강사 소개에 필요한 사진과 경력 요약만 교재에 포함합니다.
 
 ## 디자인
 
-OpenDesign 공식 사이트의 밝은 작업 공간 구성과 [Clean 디자인 시스템](https://github.com/nexu-io/open-design/blob/main/design-systems/clean/DESIGN.md)을 참고해 독립적인 HTML/CSS로 제작했습니다. OpenDesign 로고·제품 화면·소스 코드는 복제하지 않았습니다.
+사용자가 2026.10.15 마지막으로 확정한 네 번째 이미지 화면을 기준으로 구현했습니다. 흰색 학교 로고 헤더, 연한 파란색 번호 목차, 큰 남색·청록색 제목, 문서 3장 그림, 수업 순서 4단계와 PDF 3종 카드가 홈에 배치됩니다. 같은 헤더·목차·색상으로 이론·자료실·작성 양식·문서 검토 화면을 연결합니다. 이론은 네 개 탭, 실습은 17단계이며 화면 위·아래에서 단계를 이동할 수 있습니다. 추가 AI 도구와 스킬은 접힌 보조 메뉴에서 이용합니다. 학교 로고 출처는 `docs/assets/school-logo-source.json`, 생성 그림 기록은 `docs/assets/school-document-flow.provenance.json`, 글꼴·아이콘 라이선스는 `docs/assets/third-party-assets.md`에 있습니다.
+
+기존 공개 자료와 서비스 캡처를 보존했습니다. 사이트 자체 화면 3장은 현재 UI로 다시 촬영했으며, 입력 예시는 실제 규정 발췌가 아님을 표시합니다. `design-qa.md`에 선택 시안과 실제 화면 비교, 브라우저 검증, 문서 렌더 검토를 기록합니다.
 
 ## 검증
 
 `scripts/check-site.cjs`: 링크/파일 존재, 자료 목록, JS 구문 검사.
 `scripts/serve.cjs`: 로컬 개발 HTTP 서버. 기본 포트 4173.
 `artifacts/`: 배포 및 화면 검증 증거(커밋하지 않음).
+`output/`: 최종 문서의 로컬 사본(배포본은 `docs/downloads/`).
+`scripts/build-lesson-plan.py`, `scripts/build-lecture-pdf.py`: 문서 작성 스크립트. 강사 소개 원자료는 로컬 `artifacts/selected-build/profile.json`과 추출 사진을 별도로 사용합니다.
 
 라이선스: 직접 제작한 사이트 코드 MIT. 외부 스킬 및 공공 자료의 이용 조건은 각 원문을 따릅니다. 공식 스킬 원문을 이 저장소에 재배포하지 않습니다.

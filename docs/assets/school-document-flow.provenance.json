@@ -1,0 +1,44 @@
+{
+  "asset": "school-document-flow.png",
+  "created_at": "2026-10-15",
+  "generator": "Built-in Image Gen",
+  "use_case": "precise-object-edit",
+  "component": "Home hero document flow illustration",
+  "approved_reference": "C:/Users/김세영/AppData/Local/Temp/codex-clipboard-a5ba763a-0698-4201-93cc-2b785d59327b.png",
+  "supporting_logo": "docs/assets/school-logo.png",
+  "logo_original_source": "https://school.busanedu.net/images/web/schl/busanhc.com/main/logo.png",
+  "generated_original": "C:/Users/김세영/.codex/generated_images/01a13b4a-92d3-7af3-b721-ffd65af989fe/exec-1c0b66ff-3267-4514-97b9-64cb821712dc.png",
+  "width": 630,
+  "height": 300,
+  "mode": "RGBA",
+  "transparent_background": true,
+  "recommended_display": {
+    "width": 630,
+    "height": 300
+  },
+  "sha256": "85ef909e79d2adf4523f74483aab04fd1ff5720d0580a2732cb512c4092fe2d8",
+  "inspection": "Tight 630x300 frame; first white paper approximately164x233 display pixels, exact Korean titles retained, three paper sheets and two arrows. Transparent background retained. No webpage shell or captions.",
+  "prompt": "Use case: precise-object-edit. Asset: raster PNG home hero illustration.\nEdit input image1, current hero illustration. Input image2 is exact approved webpage reference; match ONLY its upper-right three-paper illustration, without shell or captions.\nChange ONLY framing and paper aspect ratios. Retain the same three white sheets, navy exact Korean lettering, official tiny school logo on first paper, grey rules, teal highlighted search result, blue bar on third sheet, two small teal arrows, pale blue rounded surface behind left sheet and subtle shadows.\nCRITICAL geometry: output landscape aspect ratio 2.1:1, equivalent to canvas630x300. Artwork occupies essentially the full canvas with about10pixel outer transparent margins, no huge empty padding. On the 630x300 coordinate grid: first white paper x40,y30,width165,height235 (portrait ratio0.70). Middle white paper x242,y40,width178,height225. Third white paper x455,y36,width165,height229. Arrows in the narrow gap x216..238 and426..448. Pale blue rounded surface extends x10..360,y10..285. Preserve these relative proportions. First sheet starts only30pixels below image top. It must appear visibly taller and larger than current composition at display630px wide. Titles on the papers should be navy type about17pixels display size, tinylogo about90pixels wide.\nText verbatim: first heading \"학교규정집\"; middle searchfield \"학교 규정 검색\"; third heading \"교직원 안내문\"; badge \"PDF\". Preserve these exact Korean names.\nDo not add any captions, extra labels, slogans, webpage text or elements. Actual background outside artwork transparent. Smooth clean alpha edges; no noisy alpha fringe, no rough torn-paper rim. Same calm flat UI document illustration as the approved reference.",
+  "revision": 2,
+  "previous_generated_original": "C:/Users/김세영/.codex/generated_images/01a13b4a-92d3-7af3-b721-ffd65af989fe/exec-58adf65f-7c84-407c-bc6d-a32e3bb06b8f.png",
+  "generated_native_size": {
+    "width": 1816,
+    "height": 866
+  },
+  "export_normalization": {
+    "authorized": "Parent task explicitly allowed export normalization",
+    "crop": [
+      70,
+      65,
+      1768,
+      809
+    ],
+    "resize": [
+      630,
+      300
+    ],
+    "resampling": "LANCZOS",
+    "alpha_preserved": true
+  },
+  "initial_prompt": "Use case: compositing.\nAsset type: website home hero illustration, raster PNG cutout.\nInput image 1 is the EXACT approved full webpage reference. Recreate ONLY the three document sheets illustration in its upper right area, approximately x815 to1445 y170 to440. Exclude the webpage header, sidebar, headline, buttons, timeline, captions beneath documents, and handwritten note. Input image2 is the official school logo supporting insert. Keep it tiny and faithful on the first paper.\nPrimary request: isolate and faithfully recreate the selected school-document flow illustration: three white upright paper sheets in a horizontal row with subtle soft shadows, arrows between them, a very pale rounded blue surface behind the left paper. First sheet is about165wide235high; middle and third about180wide225high. First top slightly higher. Papers should be front-facing flat UI illustration as in reference, with fine pale blue outlines, slight corner rounding. Teal search icon atop center page, rows of grey text strokes, teal-highlighted search result lines, light-blue bar and grey bulleted lines on third page. First sheet has tiny official school logo and an unobtrusive grey PDF badge near its bottom.\nText (verbatim): first paper \"학교규정집\"; middle search field \"학교 규정 검색\"; last paper \"교직원 안내문\"; first small badge \"PDF\". Only these lettering apart from original tiny logo. Korean characters crisp and correct, navy bold headings.\nComposition: exactly the reference composition; landscape horizontal image intended display 630x310. Keep 3papers fully visible with soft shadows and approx20px side margins. The silhouette/pale-blue rounded surface is part of the artwork. Actual image area outside artwork must be transparent.\nColor palette: white paper, navy #06234e text, teal #007f93 highlights/arrows, subdued grey rules, very pale icy blue.\nConstraints: preserve the approved reference scale, spacing, minimal design and quiet detail. No new labels, no captions beneath, no people, no giant text or extra decorative symbols, no watermark. Match the supplied reference closely."
+}
