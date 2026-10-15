@@ -20,10 +20,10 @@ Same-viewport comparison: `artifacts/selected-build/comparison-final.jpg`, refer
 - Six main curriculum links open their intended routes. Guide top next advances the step; both next controls are disabled at 17/17.
 - Materials show 11 sources; 개인정보 search returns one. Skills show nine items; 한글 search returns two, and the usage dialog opens and closes.
 - Tool comparison changes to Claude. Request generation includes entered data and enables copying and TXT saving. Clipboard content and the downloaded TXT were checked.
-- Browser downloads for PDF and DOCX succeed. Final public copies are byte-identical to the local deliverables.
+- PDF download succeeds and its public copy matches the local deliverable. The Word download link was subsequently removed at the user's request; the existing lesson plan is preserved.
 - At desktop widths 1487 and 1280 there is no document horizontal overflow. Desktop is the user's confirmed surface; additional mobile polish is outside this iteration.
 - Current application console error log is empty.
-- Static checker passes: 106 local references, 5 tools, 9 skills, 11 public sources, continuous 120-minute timetable.
+- Static checker passes: 105 local references, 5 tools, 9 skills, 11 public sources, continuous 120-minute timetable.
 
 ## Document verification
 
