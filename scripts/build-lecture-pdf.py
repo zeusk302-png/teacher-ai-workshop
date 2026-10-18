@@ -17,6 +17,7 @@ PATH=OUT/'teacher-ai-lecture.pdf'
 URL='https://zeusk302-png.github.io/teacher-ai-workshop/'
 NIST='https://csrc.nist.gov/glossary/term/retrieval_augmented_generation'
 GOOGLE='https://support.google.com/gemininotebook/answer/16179559?hl=ko'
+RAG_BUILD='https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview'
 pdfmetrics.registerFont(TTFont('Malgun','C:/Windows/Fonts/malgun.ttf'))
 pdfmetrics.registerFont(TTFont('MalgunBold','C:/Windows/Fonts/malgunbd.ttf'))
 pdfmetrics.registerFontFamily('Malgun',normal='Malgun',bold='MalgunBold',italic='Malgun',boldItalic='MalgunBold')
@@ -82,7 +83,7 @@ para('RAG와 NotebookLM의 개념 · 공개 자료 등록과 검색<br/>Word·Po
 image(Path('docs/assets/school-document-flow.png'),524,185,390,186)
 image(Path('docs/assets/course-qr.png'),40,401,84,84)
 para('강의 사이트 · 자료와 실습 화면<br/><a href="'+URL+'" color="#007e92">'+URL+'</a>',141,411,710,15,leading=25)
-txt('교재 작성 2026. 10. 15. · 강사 김세영',524,382,13,MUTED)
+txt('교재 수정 2026. 10. 18. · 강사 김세영',524,382,13,MUTED)
 
 profile=json.loads((ROOT/'artifacts/selected-build/profile.json').read_text(encoding='utf-8'))
 start('강사 소개','김세영','기업부설연구소 연구소장 · R&D 엔지니어 · 기술교육자')
@@ -102,12 +103,17 @@ for item in profile['lectures']:
     y+=para('• '+escape(item),552,y,368,12.5,leading=20)+6
 txt('제공 이력서 기준 · 재직·강의 기록 중 연수 관련 항목 발췌',552,489,9.5,MUTED)
 
-start('수업 안내','오늘의 수업 순서','개념을 익힌 뒤 함께 따라 하고, 조건을 바꿔 문서를 작성합니다.')
-rows=[('00–10분','RAG와 NotebookLM','검색과 생성 · 방법과 제품의 차이'),('10–25분','AI 도구 비교','계정 기능 확인과 실습 도구 선택'),('25–55분','학교 자료 등록·검색','PDF 3종 등록 · 질문 · 인용 원문 대조'),('55–65분','휴식','자료 처리와 계정 상태 확인'),('65–80분','스킬과 작성 요청','발췌문·출처·양식·검토 기준 정리'),('80–110분','Word·PPT·Excel 실습','짧은 시연 후 한 형식 선택·작성·검토'),('110–120분','결과 확인','날짜·수치·서식 대조와 수정 사항 공유')]
+start('수업 안내','오늘의 수업 순서','자료 등록 5분 · 검색한 내용으로 작성 요청을 만들고 양식 문서를 완성합니다.')
+schedule_source=(ROOT/'docs/data.js').read_text(encoding='utf-8')
+schedule_block=re.search(r'schedule:\s*\[(.*?)\n\s*\]',schedule_source,re.S).group(1)
+rows=[(time+'분',title,body) for time,title,body in re.findall(r"\{time:'([^']+)',title:'([^']+)',description:'([^']+)'\}",schedule_block)]
+assert len(rows)==9, 'Review the public 120-minute timetable before rebuilding the PDF'
 for i,(t,title,body) in enumerate(rows):
-    yy=192+i*40
-    if i%2==0:box(40,yy,880,37)
-    txt(t,55,yy+9,13,TEAL,'MalgunBold');txt(title,165,yy+9,14,NAVY,'MalgunBold');txt(body,435,yy+9,13,NAVY)
+    yy=183+i*34
+    if i%2==0:box(40,yy,880,33)
+    txt(t,51,yy+9,11,TEAL,'MalgunBold')
+    para(escape(title),151,yy+7,264,12,NAVY,True,17)
+    para(escape(body),435,yy+2,470,11,NAVY,leading=15)
 
 start('수업 안내','준비물과 완료할 결과')
 cards([('준비물','노트북과 브라우저<br/>Google 계정<br/>실습에 사용할 외부 AI 계정<br/><br/>계정의 업로드·파일 생성 기능을 먼저 확인합니다.'),('공개 자료 3종','학교규정집<br/>학교규정 개정 사항<br/>학업성적관리 지침<br/><br/>학교·교육청·법령 자료를 구분하고 적용 시점을 확인합니다.'),('완료할 결과','등록한 노트북 1개<br/>검색 데이터가 담긴 작성 요청 1개<br/>검토한 업무 문서 1개<br/><br/>인용 두 곳을 원문과 대조한 기록도 남깁니다.')],heights=268)
@@ -136,9 +142,18 @@ for i,row in enumerate(table):
     for (x,w),value in zip(cols,row):para(escape(value),x,yy,w,15.5,leading=22)
 link('자료 기반 채팅·인용 기능 · Google 공식 도움말',GOOGLE)
 
-start('01 · RAG와 NotebookLM','자료 등록과 모델 학습을 구분합니다')
-cards([('자료 등록','노트북에서 질문에 사용할 소스를 추가합니다.<br/><br/>등록했다고 사용자가 새로운 언어 모델을 직접 학습한 것은 아닙니다.'),('이번 실습 범위','PDF 자료 선택<br/>질문과 답변<br/>인용 원문 대조<br/><br/>API 기반 검색 시스템을 구축하는 실습과 구분합니다.'),('외부 AI로 전달','확인한 발췌문과 출처를 작성 요청에 넣습니다.<br/><br/>복사만으로 외부 AI가 원래 노트북 전체를 자동 검색하도록 연결되지는 않습니다.')],heights=265)
-link('제품 기능 확인 · Google 공식 도움말',GOOGLE)
+start('01 · RAG와 NotebookLM','직접 RAG를 구축할 때 필요한 것','자료와 검색 기능 · 생성 모델 · 연결 프로그램과 운영 환경')
+cards([('자료와 검색','자료 수집·텍스트 추출<br/>검색할 구간 나누기<br/>자료명·쪽·적용 연도 보관<br/><br/>검색 색인과 검색 기능<br/>의미 검색에는 임베딩 활용'),('모델과 연결','모델 API 또는 직접 실행<br/>모델 입력·출력 처리<br/><br/>질문 → 검색 → 원문·지시문 구성 → 모델 호출을 프로그램으로 연결'),('실행과 운영','실행 환경과 사용 비용<br/>문서별 접근 권한<br/>개정 자료 반영<br/>검색·답변 품질 검사<br/><br/>자료에 없는 질문도 시험')],heights=255)
+para('API 사용 시 GPU 직접 설치 불필요 · 벡터 DB는 검색 방식에 따라 선택 · RAG는 모델 추가 학습 없이 구성 가능',40,459,880,11,MUTED,leading=16)
+link('구축 구성 · Microsoft RAG 안내',RAG_BUILD)
+
+start('01 · RAG와 NotebookLM','이번 연수에서는 도구별로 역할을 나눕니다','상황 입력 → 자료 검색 → 작성 요청 → 양식 문서 완성 → 수정·검토')
+cards([('NotebookLM','관련 자료와 양식 등록<br/>업무에 필요한 내용 검색<br/>인용 원문 확인<br/><br/>발췌문·입력값·작성 조건을 외부 AI용 요청으로 정리'),('외부 AI와 양식','작성 요청·원문·양식 받기<br/>문서 파일 생성<br/>날짜·인원 변경 반영<br/><br/>파일 생성 기능은 계정과 실행 도구에 따라 확인'),('사람','업무 조건과 자료 선택<br/>요청·파일 복사·첨부<br/>완성 파일 직접 열기<br/><br/>내용·표·쪽 나눔 검사<br/>수정 전 값 잔재 확인')],heights=270)
+link('제품 기능 · Google 공식 도움말 · 이 역할 분담은 이번 연수의 진행 방식입니다',GOOGLE)
+
+start('01 · RAG와 NotebookLM','외부 AI에 전달할 세 가지','NotebookLM의 인용 번호만 복사하면 필요한 원문이 함께 전달되지 않을 수 있습니다.')
+cards([('작성 요청','업무 목적과 필요한 결과물<br/>양식 항목별 작성 내용<br/>이번 날짜·대상·인원<br/>고정할 작성 규칙<br/>미확정 정보 처리<br/>파일 검토 기준'),('원문 발췌','검색한 내용 중 실제 사용할 구절을 넣습니다.<br/><br/>자료명·조항·쪽·적용 시점도 적고, 외부 AI가 원래 노트북을 읽는다고 가정하지 않습니다.'),('원본 양식','제목·항목·표 구조를 유지할 편집용 파일을 첨부합니다.<br/><br/>PDF 서식을 DOCX로 재구성하는 것과 HWPX 원본 양식을 보존하는 것은 별도 검증이 필요합니다.')],heights=270)
+para('RAG는 사용할 내용을 찾는 데 쓰입니다. 문서 파일 생성과 양식 반영에는 별도의 기능·도구가 필요합니다.',40,475,880,12,TEAL,leading=18)
 
 start('01 · RAG와 NotebookLM','인용은 직접 열어서 확인합니다','답변을 읽고 끝내지 말고, 인용된 원문 두 곳을 확인합니다.')
 cards([('날짜와 적용 범위','어느 학년도인가?<br/>언제부터 적용되는가?<br/>어떤 학교급·업무 대상인가?'),('조건과 예외','답변이 조건을 빠뜨렸는가?<br/>예외 조항이 있는가?<br/>인용 앞뒤 문맥은 무엇인가?'),('확인 필요','자료에 없는 담당자·기한·수치는 남겨 둡니다.<br/><br/>자료 간 충돌은 기록하고 업무 담당자가 검토합니다.')],heights=243)

@@ -39,3 +39,15 @@ Same-viewport comparison: `artifacts/selected-build/comparison-final.jpg`, refer
 This verifies the local website and generated teaching documents. Actual participant learning, external AI account functionality, and learner-created Office files were not evaluated. Design preference remains the user's judgment. Public deployment evidence is recorded separately after deployment.
 
 final result: passed
+
+## RAG teaching update — 2026-10-18
+
+- Preserved the selected home composition, logo and navigation. Expanded theory to six tabs covering the RAG pipeline, own-system resources, division of work, handoff contents and review.
+- Explained text extraction/OCR, indexing, optional embedding/vector retrieval, model/API access, orchestration and operations. A dedicated vector database, model retraining and an on-site GPU are not presented as universal requirements.
+- Mapped source search and instruction preparation to NotebookLM, document creation to an external AI with file tools and a template, and copy/attachment/review to the participant. The workflow is not described as an automatically connected RAG backend.
+- Added the limits of the actual 2026-10-18 browser test: Claude Pro, PDF form rebuilt as DOCX, fictional case, no verified HWPX fidelity or free-account run.
+- Rebalanced the continuous 120-minute plan to nine blocks, including five minutes of source/template preparation and a separate revision exercise. The PDF reads this same timetable from data.js. Prior seven-block progress uses a separate storage key.
+- Local Chrome: all six tabs, counter, one visible panel, final practice link and keyboard Home verified. No page horizontal overflow on the current desktop viewport. New theory and schedule screenshots are in artifacts/rag-theory-2026-10-18/.
+- Rebuilt the lecture PDF to 43 landscape pages. Reviewed all-page contact sheets and full-resolution changed pages 3, 9, 10 and 11; text remains above the footer. Pages 1 and 43 decode to the public course URL. Page 2 retains the instructor introduction.
+- Static validation: 106 local references, five tools, nine skills, 11 unchanged public sources and 120 continuous minutes. The checker now recognizes valid PDF page fragments.
+- These checks cover the local implementation and rendered course PDF; classroom pacing remains a plan. Public build and byte-verification results follow deployment.

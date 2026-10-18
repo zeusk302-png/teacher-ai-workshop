@@ -31,13 +31,15 @@ window.COURSE_DATA = {
     {file:'assets/notebook/03-citation.jpg',short:'인용·원문 대조',title:'인용 번호를 눌러 원문을 확인',alt:'검색 답변의 인용을 열어 school-rules-2026.pdf의 수행평가 추가 평가 원문을 확인하는 실제 화면',caption:'답변의 인용을 눌러 원문 구간을 열었습니다. 조항 앞뒤의 조건과 예외까지 읽고 현재 학교 적용 기준을 확인합니다.'}
   ],
   schedule: [
-    {time:'00–10',title:'RAG와 NotebookLM',description:'공개 자료에서 데이터를 검색하고 문서에 활용하는 흐름을 확인합니다.'},
-    {time:'10–25',title:'AI 5종의 업무별 기능 선택',description:'5개 모두 로그인할 필요는 없습니다. 주력 도구 하나와 NotebookLM을 준비합니다.'},
-    {time:'25–55',title:'공개 자료 등록·검색·인용 확인',description:'학교·교육청·법령을 구분해 등록하고 검색 결과 두 곳을 원문과 대조합니다.'},
+    {time:'00–10',title:'RAG 개념과 도구별 역할',description:'직접 구축에 필요한 구성과 NotebookLM·외부 AI·양식·사람의 역할을 살펴봅니다.'},
+    {time:'10–15',title:'자료와 양식 준비',description:'계정은 미리 확인합니다. 준비한 자료를 등록하고 작성할 양식의 항목을 살펴봅니다.'},
+    {time:'15–35',title:'필요한 내용 검색과 원문 확인',description:'업무 상황에 맞는 자료를 선택하고 검색 결과 두 곳을 원문과 대조합니다.'},
+    {time:'35–55',title:'NotebookLM으로 작성 요청 만들기',description:'원문 발췌·필수 항목·이번 입력값·작성 조건을 외부 AI에 전달할 요청으로 정리합니다.'},
     {time:'55–65',title:'휴식',description:'자료 처리와 로그인 상태를 점검합니다.'},
-    {time:'65–80',title:'공식·사용자 스킬 적용',description:'내 업무에 맞는 절차와 품질 기준을 선택해 작업 요청을 준비합니다.'},
-    {time:'80–110',title:'문서 작성 실습',description:'Word/HWPX 초안, PPT 구성, Excel 관리표 중 한 가지를 완성합니다.'},
-    {time:'110–120',title:'원문·파일 검증과 공유',description:'검색한 데이터, 수정한 부분, 추가로 확인할 사항을 함께 정리합니다.'}
+    {time:'65–85',title:'외부 AI로 양식 문서 완성',description:'작성 요청과 필요한 자료·원본 양식을 전달해 선택한 형식의 파일을 만듭니다.'},
+    {time:'85–100',title:'조건을 바꾸어 다시 작성',description:'날짜·시간·인원을 변경하고 본문과 표에 같은 값이 반영됐는지 확인합니다.'},
+    {time:'100–110',title:'내용·표·서식 검토',description:'완성 파일을 열어 원문과 대조하고 누락·이전 값·쪽 나눔을 확인합니다.'},
+    {time:'110–120',title:'저장·공유·질문',description:'완성 문서와 다음 업무에 재사용할 작성 요청을 저장하고 질문을 정리합니다.'}
   ],
   resources: [
     ['NotebookLM 열기','https://notebooklm.google.com/'],['NotebookLM 소스 지원 형식','https://support.google.com/gemininotebook/answer/16215270?hl=ko'],['Gemini Canvas 사용법','https://support.google.com/gemini/answer/16047321?hl=ko'],['ChatGPT 자료 활용','https://learn.chatgpt.com/docs/use-chatgpt'],['Claude 무료 파일 생성','https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude'],['Claude 스킬 설정·업로드','https://support.claude.com/en/articles/12512180-use-skills-in-claude'],['Grok 검색·무료 접근 안내','https://x.ai/legal/faq'],['Copilot 무료·Microsoft 365 차이','https://support.microsoft.com/en-gb/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365'],['HWPX 구조 · 한컴 공식','https://tech.hancom.com/hwpxformat/'],['PDF→HWPX · 한컴 공식','https://help.hancom.com/hoffice130/ko-KR/Hpdf/file/open/open(pdf).htm'],['공식 문서 스킬 저장소','https://github.com/anthropics/skills'],['사용자 스킬 모음','https://github.com/ComposioHQ/awesome-claude-skills']

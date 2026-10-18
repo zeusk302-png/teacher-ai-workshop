@@ -23,7 +23,7 @@ dialog{width:calc(100% - 32px);max-width:720px;max-height:90vh;max-height:90dvh;
 .sidebar-concepts{display:flex;align-items:center;min-height:50px;margin:0 0 15px;padding:10px 14px;color:var(--sidebar-text);font-size:14px;border-top:1px solid var(--sidebar-line);border-bottom:1px solid var(--sidebar-line)}
 .sidebar-concepts[aria-current=page]{color:var(--surface);background:var(--sidebar-selected);font-weight:600}
 .flow-title{display:flex;align-items:center;justify-content:space-between;gap:15px}.flow-title .concept-entry{font-size:13px;font-weight:500}
-.concept-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--border);gap:4px}
+.concept-tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid var(--border);gap:4px}
 .concept-tabs button{border:0;border-radius:0;border-bottom:3px solid transparent;font-size:15px;padding:14px 8px;min-height:52px;background:var(--surface)}
 .concept-tabs button[aria-selected=true]{border-color:var(--accent-strong);color:var(--navy);font-weight:700}
 .concept-tabs button:focus-visible{outline-offset:-4px}
