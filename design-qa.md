@@ -51,3 +51,17 @@ final result: passed
 - Rebuilt the lecture PDF to 43 landscape pages. Reviewed all-page contact sheets and full-resolution changed pages 3, 9, 10 and 11; text remains above the footer. Pages 1 and 43 decode to the public course URL. Page 2 retains the instructor introduction.
 - Static validation: 106 local references, five tools, nine skills, 11 unchanged public sources and 120 continuous minutes. The checker now recognizes valid PDF page fragments.
 - These checks cover the local implementation and rendered course PDF; classroom pacing remains a plan. Public build and byte-verification results follow deployment.
+
+
+## Workflow and deeper theory — 2026-10-18
+
+- Rewrote the home, sidebar, request builder and document guide around source search → writing request → form completion → changed conditions → reuse. The selected school identity, logo and existing illustration remain.
+- Added 6 chapters / 24 topics / 6,584 Korean characters of explanatory notes. They distinguish model knowledge, input facts, RAG and fine-tuning; explain OCR/chunks, keyword/vector retrieval, context selection, own-system development/operations, managed-tool roles, prompt design and stage-specific checks. Official sources and original research are linked. The long-context study is dated and is not generalized to every current model.
+- Preserved the 120-minute plan and its 5-minute preparation block. Deeper notes are optional lecture/reading material. The basic task is one pre-visit plan; slides, spreadsheets and skill installation are optional extensions.
+- Published only the clean, previously tested source form, first/revised PDFs and NotebookLM-generated request. Labelled the fictional case, PDF-to-DOCX reconstruction and Claude Pro test boundaries. No Word lesson-plan link was added.
+- Split fixed rules, current values, template and future revision in the builder. Initial and revision requests have separate copy targets. Editing a field disables copy/save until regenerated. Verified generated text and browser clipboard equality, the separate revision, and invalidation after a changed input.
+- Chrome at the available desktop viewport: all six theory chapters opened, each containing four subtopics, no horizontal panel overflow. Verified school-search recommendation switches to NotebookLM and file-task recommendation restores Claude. Verified document guide comparison/source/example links and exact basic-search prompt. No console errors on the tested guide page.
+- Recaptured 3 current-site screenshots (2026.10.18). Existing service screenshots retain 2026.10.14 labels. Added the full search and writing-request prompts to the guide and handout.
+- Rebuilt to 53 landscape pages. Reviewed all-page contact sheets, detailed changed pages and corrected a crowded completion card. The lecturer page text and embedded images match the previous PDF, excluding the updated course footer. Cover and final-page QR codes decode to the public site.
+- Static checker: 108 local references, 5 tools, 9 skills, 11 source hashes preserved, 120 continuous minutes. Additional HTML scan: 112 references, zero missing files/anchors. All PDF text blocks are above the footer. Evidence: artifacts/course-alignment-2026-10-18/.
+- Browser checks cover the website's workflow UI, not a new external-service execution. The external AI files are from the previously completed 2026.10.18 test. Classroom timing is a plan, not measured learner or productivity data.

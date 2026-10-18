@@ -1,6 +1,6 @@
 'use strict';
 (() => {
-  const checks=[...document.querySelectorAll('[data-document-check]')],key='teacher-ai-document-check-v1';
+  const checks=[...document.querySelectorAll('[data-document-check]')],key='teacher-ai-document-check-v2';
   let saved=[];try{saved=JSON.parse(localStorage.getItem(key)||'[]');if(!Array.isArray(saved))saved=[];}catch{}
   checks.forEach(c=>{c.checked=saved.includes(c.dataset.documentCheck);c.addEventListener('change',update);});
   function update(){const done=checks.filter(c=>c.checked).map(c=>c.dataset.documentCheck);document.getElementById('document-progress').textContent=`${done.length} / 4 항목 완료`;try{localStorage.setItem(key,JSON.stringify(done));}catch{}}
